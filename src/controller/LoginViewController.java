@@ -5,6 +5,7 @@ import model.DAO.UserDAO;
 import model.User;
 import view.LoginView;
 import view.MainScreen;
+import view.NewUserView;
 
 
 public class LoginViewController {
@@ -35,10 +36,16 @@ public class LoginViewController {
         }
         else{
             view.showMessage("Username doesn't exist.\n"
-                    + "Please, try 'default' username and 'default' password!");
+                    + "If you don't have an account, please click on 'New User' button.");
             helper.clearScreen();
         }
         
+    }
+    
+    public void newUserScreen(){
+        this.view.dispose();
+        NewUserView newUserView = new NewUserView();
+        newUserView.setVisible(true);
     }
 
 }
